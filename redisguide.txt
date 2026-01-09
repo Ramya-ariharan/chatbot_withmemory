@@ -1,0 +1,8 @@
+pip install redis
+# Redis Guide
+This guide provides an overview of how to use Redis, an in-memory data structure store, with Python. We will cover installation, basic commands, and some advanced features.
+
+
+first redis-client
+
+then, memory services

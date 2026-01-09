@@ -21,3 +21,25 @@ def get_llm_response(chat_history):
     )
 
     return response.choices[0].message.content
+
+
+
+SYSTEM_PROMPT = {
+    "role": "system",
+    "content": (
+        "You are a helpful AI assistant. "
+        "You remember user context within the conversation. "
+        "Be concise, clear, and professional."
+    )
+}
+
+def get_llm_response_memory(chat_history):
+    messages = [SYSTEM_PROMPT] + chat_history
+
+    response = client.chat.completions.create(
+        model="llama-3.1-8b-instant",
+        messages=messages,
+        temperature=0.7
+    )
+
+    return response.choices[0].message.content
